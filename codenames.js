@@ -1,8 +1,11 @@
-$(document).ready(newGame);
+$(document).ready(function(){
+    const SPYMASTER = new gameGrid();
+});
 
 class gameGrid{
-    constructor(){
+    constructor(boardSize=5, howManyAssassins=1, howManyBlue=6, howManyRed=7){
         this.gameboard = [];
+        this.startGame(boardSize, howManyAssassins, howManyBlue, howManyRed);
     }
     
     startGame(boardSize, howManyAssassins, howManyBlue, howManyRed){
@@ -16,54 +19,54 @@ class gameGrid{
     Will set default size to 5x5, but can be set to bigger or smaller
      */
     
-    makeBoard(size=5){
-        gameboard = new Array(size);
+    makeBoard(size){
+        this.gameboard = new Array(size);
 
-        for (let rowIndex = 0; rowIndex < gameboard.length; rowIndex++) {
-            gameboard[rowIndex] = new Array(size);
+        for (let rowIndex = 0; rowIndex < this.gameboard.length; rowIndex++) {
+            this.gameboard[rowIndex] = new Array(size);
         } //makes columns
 
-        for (rowIndex = 0; rowIndex < gameboard.length; rowIndex++) {
-            for (let columnIndex = 0; columnIndex < gameboard[0].length; columnIndex++) {
-                gameboard[rowIndex][columnIndex] = $('<div>', {
+        for (let rowIndex = 0; rowIndex < this.gameboard.length; rowIndex++) {
+            for (let columnIndex = 0; columnIndex < this.gameboard[0].length; columnIndex++) {
+                this.gameboard[rowIndex][columnIndex] = $('<div>', {
                     'class': 'tile empty'
                 });
 
-                $('#gameboard').append(gameboard[rowIndex][columnIndex]);
+                $('#gameboard').append(this.gameboard[rowIndex][columnIndex]);
             }
         }  //makes all tiles
     }
 
-    chooseAssassinSquares(numberOfAssassins=1){
+    chooseAssassinSquares(numberOfAssassins){
         for (let i=0; i<numberOfAssassins; i++){
-            let x = Math.floor(Math.random() * gameboard.length);
-            let y = Math.floor(Math.random() * gameboard.length);
-            if (gameboard[x][y].hasClass('empty')){
-                gameboard[x][y].removeClass('empty').addClass('assassin');
+            let x = Math.floor(Math.random() * this.gameboard.length);
+            let y = Math.floor(Math.random() * this.gameboard.length);
+            if (this.gameboard[x][y].hasClass('empty')){
+                this.gameboard[x][y].removeClass('empty').addClass('assassin');
             } else {
                 i--;
             }
         }
     }
 
-    chooseBlueSquares(numberOfBlueAgents=6){
+    chooseBlueSquares(numberOfBlueAgents){
         for (let i=0; i<numberOfBlueAgents; i++){
-            let x = Math.floor(Math.random() * gameboard.length);
-            let y = Math.floor(Math.random() * gameboard.length);
-            if (gameboard[x][y].hasClass('empty')){
-                gameboard[x][y].removeClass('empty').addClass('blue');
+            let x = Math.floor(Math.random() * this.gameboard.length);
+            let y = Math.floor(Math.random() * this.gameboard.length);
+            if (this.gameboard[x][y].hasClass('empty')){
+                this.gameboard[x][y].removeClass('empty').addClass('blue');
             } else {
                 i--;
             }
         }
     }
 
-    chooseRedSquares(numberOfRedAgents=7){
+    chooseRedSquares(numberOfRedAgents){
         for (let i=0; i<numberOfRedAgents; i++){
-            let x = Math.floor(Math.random() * gameboard.length);
-            let y = Math.floor(Math.random() * gameboard.length);
-            if (gameboard[x][y].hasClass('empty')){
-                gameboard[x][y].removeClass('empty').addClass('red');
+            let x = Math.floor(Math.random() * this.gameboard.length);
+            let y = Math.floor(Math.random() * this.gameboard.length);
+            if (this.gameboard[x][y].hasClass('empty')){
+                this.gameboard[x][y].removeClass('empty').addClass('red');
             } else {
                 i--;
             }
@@ -71,5 +74,5 @@ class gameGrid{
     }
 }
 
-const SPYMASTER = new gameGrid();
+
 
