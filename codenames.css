@@ -1,0 +1,42 @@
+body, html {
+    margin: 0;
+    font-size: 0;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: lavender;
+}
+
+#gameboard {
+    width: 500px;
+    height: 500px;
+    border: 2px solid black;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: gray;
+}
+
+.tile {
+    width: 100px;
+    height: 100px;
+    border: 1px solid white;
+    box-sizing: border-box;
+    display: inline-block;
+    position: relative;
+}
+
+.blue {
+    background-color: blue;
+}
+
+.red {
+    background-color: red;
+}
+
+.assassin {
+    background-color: black;
+}
