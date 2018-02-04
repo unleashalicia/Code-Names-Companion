@@ -1,9 +1,7 @@
 $(document).ready(startGame);
 
+
 var gameboard;
-var assassin;
-var blue;
-var red;
 
 function startGame(){
     makeBoard();
@@ -31,10 +29,8 @@ function makeBoard() {
 function chooseAssassin(){
     var x = Math.floor(Math.random() * gameboard.length);
     var y = Math.floor(Math.random() * gameboard.length);
-    assassin = gameboard[x][y];
 
-    assassin.removeClass('empty');
-    assassin.addClass('assassin');
+    gameboard[x][y].removeClass('empty').addClass('assassin');
     chooseBlue();
 
 
@@ -46,8 +42,7 @@ function chooseBlue(){
         var x = Math.floor(Math.random() * gameboard.length);
         var y = Math.floor(Math.random() * gameboard.length);
         if (gameboard[x][y].hasClass('empty')){
-            gameboard[x][y].removeClass('empty');
-            gameboard[x][y].addClass('blue');
+            gameboard[x][y].removeClass('empty').addClass('blue');
         } else {
             i--;
         }
@@ -61,8 +56,7 @@ function chooseRed(){
         var x = Math.floor(Math.random() * gameboard.length);
         var y = Math.floor(Math.random() * gameboard.length);
         if (gameboard[x][y].hasClass('empty')){
-            gameboard[x][y].removeClass('empty');
-            gameboard[x][y].addClass('red');
+            gameboard[x][y].removeClass('empty').addClass('red');
         } else {
             i--;
         }
