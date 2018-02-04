@@ -103,6 +103,8 @@ form > div {
     height: 25px;
     width: 20%;
     border: 2px solid black;
+    font-size: 3vmin;
+    text-align: right;
 }
 
 button {
