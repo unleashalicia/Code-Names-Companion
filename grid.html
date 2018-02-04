@@ -10,6 +10,34 @@
 
     </head>
     <body>
-        <div id="gameboard"></div>
+        <div id="header">
+            <h1>CODENAMES</h1>
+        </div>
+        <div id="container">
+            <div id="gameboard"></div>
+            <div id="form-container">
+                <form>
+                    <div class="form-div">
+                        <label>Size of Board: </label>
+                        <input name="size" type="number" min="3" max="50"/>
+                    </div>
+                    <div class="form-div">
+                        <label>How Many Assassins: </label>
+                        <input name="assassins" type="number" min="0" max="2500"/>
+                    </div>
+                    <div>
+                        <label>How Many Blue Agents: </label>
+                        <input name="blue" type="number" min="0" max="2500"/>
+                    </div>
+                    <div class="form-div">
+                        <label>How Many Red Agents: </label>
+                        <input name="red" type="number" min="0" max="2500"/>
+                    </div>
+                    <div>
+                        <button>Set Board</button>
+                    </div>
+                </form>
+            </div>
+        </div>
     </body>
 </html>
