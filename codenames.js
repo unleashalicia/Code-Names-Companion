@@ -1,5 +1,17 @@
 $(document).ready(function(){
-    const SPYMASTER = new gameGrid();
+    /*
+
+    Input your own values here.
+    Order:
+    -board size (will be one number for width and height.
+    -how many assassins.
+    -how many blue agents
+    -how many red agents
+
+    Note: The player to go first should have one extra agent
+
+     */
+    const SPYMASTER = new gameGrid(10);
 });
 
 class gameGrid{
@@ -8,11 +20,11 @@ class gameGrid{
         this.startGame(boardSize, howManyAssassins, howManyBlue, howManyRed);
     }
     
-    startGame(boardSize, howManyAssassins, howManyBlue, howManyRed){
-        this.makeBoard(boardSize);
-        this.chooseAssassinSquares(howManyAssassins);
-        this.chooseBlueSquares(howManyBlue);
-        this.chooseRedSquares(howManyRed);
+    startGame(dimensions, assassins, blue, red){
+        this.makeBoard(dimensions);
+        this.chooseAssassinSquares(assassins);
+        this.chooseBlueSquares(blue);
+        this.chooseRedSquares(red);
     }
 
     /*
@@ -29,7 +41,11 @@ class gameGrid{
         for (let rowIndex = 0; rowIndex < this.gameboard.length; rowIndex++) {
             for (let columnIndex = 0; columnIndex < this.gameboard[0].length; columnIndex++) {
                 this.gameboard[rowIndex][columnIndex] = $('<div>', {
-                    'class': 'tile empty'
+                    'class': 'tile empty',
+                    css: {
+                        height: `${100/size}%`,
+                        width: `${100/size}%`
+                    }
                 });
 
                 $('#gameboard').append(this.gameboard[rowIndex][columnIndex]);
