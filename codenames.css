@@ -6,7 +6,7 @@ body, html, #header {
 body {
     width: 100vw;
     height: 100vh;
-    background-color: lavender;
+    background-color: white;
 }
 
 #header {
@@ -17,7 +17,9 @@ body {
 }
 
 h1 {
-    font-size: 5vmin;
+    font-family: "Courier New", monospace;
+    font-size: 6vmin;
+    font-weight: lighter;
     margin: 0;
     align-self: center;
 }
@@ -37,13 +39,13 @@ h1 {
 #gameboard {
     width: 65vh;
     height: 65vh;
-    border: 5px solid black;
-    background-color: gray;
+    border: 10px solid black;
+    background-color: beige;
     align-self: flex-start;
 }
 
 .tile {
-    border: 1px solid white;
+    border: 1px solid black;
     box-sizing: border-box;
     display: inline-block;
     position: relative;
@@ -64,8 +66,9 @@ h1 {
 /*Form*/
 
 #form-container {
+    font-size: 2.7vmin;
     background-color: darkgray;
-    border: 5px solid black;
+    border: 10px solid black;
     border-radius: 10%;
     width: 30%;
     height: 60%;
@@ -75,12 +78,41 @@ h1 {
 
 }
 
+form {
+    width: 90%;
+}
+
 form > div {
-    font-size: 3vmin;
     display: block;
 }
 
 .form-div {
     margin: 5% 0;
+    display: flex;
+    justify-content: space-between;
+    height: 20%;
 }
+
+.form-div:first-child {
+    justify-content: center;
+    margin-top: 0;
+    margin-bottom: 7%;
+}
+
+.form-div input {
+    height: 25px;
+    width: 20%;
+    border: 2px solid black;
+}
+
+button {
+    width: 100px;
+    height: 25px;
+    background-color: darkorange;
+    border: 2px solid black;
+    border-radius: 10%;
+    font-weight: bold;
+    font-size: 1.5vmin;
+}
+
 

@@ -1,26 +1,35 @@
 $(document).ready(function(){
-    /*
 
-    Input your own values here.
-    Order:
-    -board size (will be one number for width and height.
-    -how many assassins.
-    -how many blue agents
-    -how many red agents
+    let spymaster = new gameGrid();
+    $('button').click(function(e){
+        e.preventDefault();
 
-    Note: The player to go first should have one extra agent
+        let size = $('input[name=size]').val();
+        size = parseFloat(size);
 
-     */
-    const SPYMASTER = new gameGrid(10);
+        let assassins = $('input[name=assassins]').val();
+        assassins = parseFloat(assassins);
+
+        let blue = $('input[name=blue]').val();
+        blue = parseFloat(blue);
+
+        let red = $('input[name=red').val();
+        red = parseFloat(red);
+
+
+        spymaster.startGame(size, assassins, blue, red);
+
+    });
 });
 
 class gameGrid{
-    constructor(boardSize=5, howManyAssassins=1, howManyBlue=6, howManyRed=7){
-        this.gameboard = [];
+    constructor(boardSize, howManyAssassins, howManyBlue, howManyRed){
+        this.gameboard;
         this.startGame(boardSize, howManyAssassins, howManyBlue, howManyRed);
     }
     
-    startGame(dimensions, assassins, blue, red){
+    startGame(dimensions=5, assassins=1, blue=6, red=7){
+        this.clearBoard();
         this.makeBoard(dimensions);
         this.chooseAssassinSquares(assassins);
         this.chooseBlueSquares(blue);
@@ -30,6 +39,10 @@ class gameGrid{
     /*
     Will set default size to 5x5, but can be set to bigger or smaller
      */
+
+    clearBoard(){
+        $('#gameboard').empty();
+    }
     
     makeBoard(size){
         this.gameboard = new Array(size);
