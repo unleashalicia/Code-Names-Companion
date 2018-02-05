@@ -15,3 +15,5 @@
 >  - This repo creates a more dynamic grid layout for the Codenames card game.  You will still need to buy the game in order to play
 
 > - Page contains form so you can input your own size and numbers of agents and comes set with default values
+
+<img src="./screenshots/default.png" alt="game board with customization form"/>

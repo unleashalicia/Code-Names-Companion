@@ -23,7 +23,6 @@ $(document).ready(function(){
             $('#outer-modal').show();
             $('input[name=size]').val("5");
         } else {
-            size = sizeInput;
             tiles = size * size;
         }
 
