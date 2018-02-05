@@ -5,7 +5,7 @@ $(document).ready(function(){
     });
 
     let spymaster = new gameGrid();
-    let size, tiles, assassins, blue, red;
+    let tiles;
 
 
     const error_messages = {
@@ -13,16 +13,12 @@ $(document).ready(function(){
         exceeds_tiles: "Agents and assassins cannot exceed possible game board tiles."
     };
 
-
-
-
-
     $('button').click(function(e){
         e.preventDefault();
 
-        let sizeInput = $('input[name=size]').val();
-        sizeInput = parseFloat(sizeInput);
-        if (sizeInput > 50 || sizeInput < 4){
+        let size = $('input[name=size]').val();
+        size = parseFloat(size);
+        if (size > 50 || size < 4){
             $('#error-message').text(error_messages.gameboard_size);
             $('#outer-modal').show();
             $('input[name=size]').val("5");
