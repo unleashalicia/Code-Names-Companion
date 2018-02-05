@@ -17,3 +17,7 @@
 > - Page contains form so you can input your own size and numbers of agents and comes set with default values
 
 <img src="./screenshots/default.png" alt="game board with customization form"/>
+
+<img src="./screenshots/custom.png" alt="game board with more tiles"/>
+
+<img src="./screenshots/mobile.png" alt="mobile view with grid above form"/>
