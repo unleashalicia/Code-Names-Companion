@@ -1,6 +1,7 @@
 $(document).ready(function(){
 
     let spymaster = new gameGrid();
+    $('.error-message').text('Error test');
     $('button').click(function(e){
         e.preventDefault();
 
