@@ -1,5 +1,5 @@
 
-# Code Names Companion Grid
+# CodeNames Companion Grid
 
 ### Setup Instructions
 
@@ -15,6 +15,12 @@
 >  - This repo creates a more dynamic grid layout for the Codenames card game.  You will still need to buy the game in order to play
 
 > - Page contains form so you can input your own size and numbers of agents and comes set with default values
+
+> - This utility allows for bigger boards, team advantages and disadvantages, and unlimited assassins for more suspenseful game play
+
+### Dedication
+
+> This extension is a thank you present to Daniel Paschal for his tireless mentorship and kindness
 
 <img src="./screenshots/default.png" alt="game board with customization form"/>
 

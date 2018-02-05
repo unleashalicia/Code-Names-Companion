@@ -8,7 +8,6 @@ function initiateGame(){
 
     var spymaster = new gameGrid();
     var tiles;
-
     var error_messages = {
         gameboard_size: "Number must be between 4 and 50.",
         exceeds_tiles: "Agents and assassins cannot exceed possible game board tiles."
