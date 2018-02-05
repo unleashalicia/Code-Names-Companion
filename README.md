@@ -1,5 +1,5 @@
 
-#Code Names Companion Grid
+# Code Names Companion Grid
 
 ### Setup Instructions
 
