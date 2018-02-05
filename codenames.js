@@ -1,12 +1,24 @@
 $(document).ready(function(){
+    $('#outer-modal').hide();
+    $('#outer-modal').click(function(){
+       $('#outer-modal').hide();
+    });
 
     let spymaster = new gameGrid();
     $('.error-message').text('Error test');
     $('button').click(function(e){
         e.preventDefault();
 
-        let size = $('input[name=size]').val();
-        size = parseFloat(size);
+        let size;
+        let sizeInput = $('input[name=size]').val();
+        sizeInput = parseFloat(sizeInput);
+        if (sizeInput > 50 || sizeInput < 4){
+            $('#error-message').text('Number must be between 4 and 50.');
+            $('#outer-modal').show();
+            $('input[name=size]').val("5");
+        } else {
+            size = sizeInput;
+        }
 
         let assassins = $('input[name=assassins]').val();
         assassins = parseFloat(assassins);
@@ -14,7 +26,7 @@ $(document).ready(function(){
         let blue = $('input[name=blue]').val();
         blue = parseFloat(blue);
 
-        let red = $('input[name=red').val();
+        let red = $('input[name=red]').val();
         red = parseFloat(red);
 
 
