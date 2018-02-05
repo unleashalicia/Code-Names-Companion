@@ -25,136 +25,216 @@ h1 {
     align-self: center;
 }
 
-#container {
-    width: 80%;
-    margin: auto;
-    height: 65vh;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
 
-}
+    #container {
+        width: 80%;
+        margin: auto;
+        height: 65vh;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
 
-/*Gameboard*/
+    }
 
-#gameboard {
-    width: 65vh;
-    height: 65vh;
-    border: 10px solid black;
-    background-color: beige;
-    align-self: flex-start;
-}
+    /*Gameboard*/
+    #gameboard {
+        width: 65vh;
+        height: 65vh;
+        border: 10px solid black;
+        background-color: beige;
+        align-self: flex-start;
+    }
 
-.tile {
-    border: 1px solid black;
-    box-sizing: border-box;
-    display: inline-block;
-    position: relative;
-}
+    .tile {
+        border: 1px solid black;
+        box-sizing: border-box;
+        display: inline-block;
+        position: relative;
+    }
 
-.blue {
-    background-color: blue;
-}
+    .blue {
+        background-color: blue;
+    }
 
-.red {
-    background-color: red;
-}
+    .red {
+        background-color: red;
+    }
 
-.assassin {
-    background-color: black;
-}
+    .assassin {
+        background-color: black;
+    }
 
-/*Form*/
+    /*Form*/
+    #form-container {
+        font-size: 2.7vmin;
+        background-color: darkgray;
+        border: 10px solid black;
+        border-radius: 10%;
+        width: 30%;
+        height: 60%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
-#form-container {
-    font-size: 2.7vmin;
-    background-color: darkgray;
-    border: 10px solid black;
-    border-radius: 10%;
-    width: 30%;
-    height: 60%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    }
 
-}
+    form {
+        width: 90%;
+    }
 
-form {
-    width: 90%;
-}
+    form > div {
+        display: block;
+    }
 
-form > div {
-    display: block;
-}
+    .form-div {
+        margin: 5% 0;
+        display: flex;
+        justify-content: space-between;
+        height: 20%;
+    }
 
-.form-div {
-    margin: 5% 0;
-    display: flex;
-    justify-content: space-between;
-    height: 20%;
-}
+    .form-div:first-child {
+        justify-content: center;
+        margin-top: 0;
+        margin-bottom: 7%;
+    }
 
-.form-div:first-child {
-    justify-content: center;
-    margin-top: 0;
-    margin-bottom: 7%;
-}
+    .form-div input {
+        height: 25px;
+        width: 20%;
+        border: 2px solid black;
+        font-size: 3vmin;
+        text-align: right;
+    }
 
-.form-div input {
-    height: 25px;
-    width: 20%;
-    border: 2px solid black;
-    font-size: 3vmin;
-    text-align: right;
-}
+    button {
+        width: 100px;
+        height: 25px;
+        background-color: darkorange;
+        border: 2px solid black;
+        border-radius: 10%;
+        font-weight: bold;
+        font-size: 1.5vmin;
+    }
 
-button {
-    width: 100px;
-    height: 25px;
-    background-color: darkorange;
-    border: 2px solid black;
-    border-radius: 10%;
-    font-weight: bold;
-    font-size: 1.5vmin;
-}
+    #outer-modal {
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: none;
+    }
 
-#outer-modal {
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: none;
-}
+    #inner-modal {
+        width: 50%;
+        height: 50%;
+        font-size: 3vmin;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: gray;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        border: 5px solid black;
+    }
 
-#inner-modal {
-    width: 50%;
-    height: 50%;
-    font-size: 3vmin;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: gray;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    border: 5px solid black;
-}
+    #close {
+        position: absolute;
+        right: 2%;
+        top: 2%;
+        height: 10%;
+        width: 10%;
+        background-color: darkorange;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 2px solid black;
+    }
 
-#close {
-    position: absolute;
-    right: 2%;
-    top: 2%;
-    height: 10%;
-    width: 10%;
-    background-color: darkorange;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 2px solid black;
+/*For mobile phones*/
+
+@media all and (max-width: 450px) {
+
+    #header {
+        width: 100vw;
+        height: 100px;
+        display: flex;
+        justify-content: center;
+    }
+
+    h1 {
+        font-family: "Courier New", monospace;
+        font-size: 5vmin;
+        font-weight: lighter;
+        margin: 0;
+        align-self: center;
+    }
+
+    #container {
+        height: 550px;
+        margin: auto;
+        display: flex;
+        flex-flow: column;
+        justify-content: space-between;
+        align-content: center;
+        margin-bottom: 50px;
+    }
+
+    #gameboard {
+        width: 100%;
+        height: 45%;
+        border: 5px solid black;
+        background-color: beige;
+    }
+
+    #form-container {
+        font-size: 2.7vmin;
+        background-color: darkgray;
+        border: 5px solid black;
+        border-radius: 10%;
+        width: 100%;
+        height: 45%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    #inner-modal {
+        width: 75%;
+        height: 25%;
+        font-size: 3vmin;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: gray;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        border: 5px solid black;
+        padding: 5%;
+    }
+
+    #close {
+        position: absolute;
+        right: 2%;
+        top: 2%;
+        height: 10%;
+        width: 10%;
+        background-color: darkorange;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 2px solid black;
+    }
+
 }
 
 
