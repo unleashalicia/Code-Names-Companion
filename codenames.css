@@ -7,6 +7,7 @@ body {
     width: 100vw;
     height: 100vh;
     background-color: white;
+    position: relative;
 }
 
 #header {
@@ -103,6 +104,8 @@ form > div {
     height: 25px;
     width: 20%;
     border: 2px solid black;
+    font-size: 3vmin;
+    text-align: right;
 }
 
 button {
@@ -114,5 +117,45 @@ button {
     font-weight: bold;
     font-size: 1.5vmin;
 }
+
+#outer-modal {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+}
+
+#inner-modal {
+    width: 50%;
+    height: 50%;
+    font-size: 3vmin;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    border: 5px solid black;
+}
+
+#close {
+    position: absolute;
+    right: 2%;
+    top: 2%;
+    height: 10%;
+    width: 10%;
+    background-color: darkorange;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+}
+
 
 
