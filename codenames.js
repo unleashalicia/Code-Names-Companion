@@ -5,19 +5,30 @@ $(document).ready(function(){
     });
 
     let spymaster = new gameGrid();
-    $('.error-message').text('Error test');
+    let size, tiles, assassins, blue, red;
+
+
+    const error_messages = {
+        gameboard_size: "Number must be between 4 and 50.",
+        exceeds_tiles: "Agents and assassins cannot exceed possible game board tiles."
+    };
+
+
+
+
+
     $('button').click(function(e){
         e.preventDefault();
 
-        let size;
         let sizeInput = $('input[name=size]').val();
         sizeInput = parseFloat(sizeInput);
         if (sizeInput > 50 || sizeInput < 4){
-            $('#error-message').text('Number must be between 4 and 50.');
+            $('#error-message').text(error_messages.gameboard_size);
             $('#outer-modal').show();
             $('input[name=size]').val("5");
         } else {
             size = sizeInput;
+            tiles = size * size;
         }
 
         let assassins = $('input[name=assassins]').val();
@@ -29,8 +40,15 @@ $(document).ready(function(){
         let red = $('input[name=red]').val();
         red = parseFloat(red);
 
-
-        spymaster.startGame(size, assassins, blue, red);
+        if ((assassins + blue + red) > tiles){
+            $('#error-message').text(error_messages.exceeds_tiles);
+            $('#outer-modal').show();
+            $('input[name=assassins]').val('1');
+            $('input[name=blue]').val('6');
+            $('input[name=red]').val('7');
+        } else {
+            spymaster.startGame(size, assassins, blue, red);
+        }
 
     });
 });
