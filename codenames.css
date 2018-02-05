@@ -205,6 +205,36 @@ h1 {
 
     }
 
+    #inner-modal {
+        width: 75%;
+        height: 25%;
+        font-size: 3vmin;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: gray;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        border: 5px solid black;
+        padding: 5%;
+    }
+
+    #close {
+        position: absolute;
+        right: 2%;
+        top: 2%;
+        height: 10%;
+        width: 10%;
+        background-color: darkorange;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 2px solid black;
+    }
+
 }
 
 
